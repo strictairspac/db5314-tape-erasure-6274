@@ -15,3 +15,10 @@ class CaseForm(BaseModel):
 
 class ReviewForm(BaseModel):
     note: str = Field(min_length=1, max_length=500)
+
+
+class HandoverBookForm(BaseModel):
+    title: str | None = Field(default=None, max_length=120)
+    request_key: str | None = Field(default=None, max_length=80)
+    batch_size: int | None = Field(default=100, ge=1, le=1000)
+    build: bool = True
